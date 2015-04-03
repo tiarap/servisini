@@ -1,0 +1,10 @@
+<?php
+include('file:///C|/xampp/htdocs/servis/conn.php');
+$id = isset($_GET['id']) ? $_GET['id'] : '';
+
+$sql = "DELETE FROM `serviceinfo` WHERE id_bengkel= '$id'" or die (mysql_error());
+	$show = mysqli_query($conn, $sql);
+	$dataTampil = mysqli_fetch_array($show);
+	header('location:adminhome.php');
+	
+	?>
